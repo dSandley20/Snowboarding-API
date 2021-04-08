@@ -18,7 +18,8 @@ public class SnowboardApiApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SnowboardApiApplication.class, args);
 	}
-//
+
+//	Just logs all of the beans that are loaded has no functionality important to the API
 //	@Bean
 //	  public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
 //	    return args -> {
