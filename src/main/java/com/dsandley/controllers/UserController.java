@@ -15,11 +15,11 @@ import com.dsandley.services.UserService;
 public class UserController {
 	
 	@Autowired
-	private UserService userService;
+	private UserService service;
 	
 	@GetMapping("/users")
 	public List<User> findUsers(){
-		return userService.findAll();
+		return service.findAll();
 	}
 	
 	@GetMapping("/")
