@@ -3,6 +3,7 @@
  */
 package com.dsandley.models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -24,6 +25,7 @@ public class Location {
 	 private String country;
 	 private String state;
 	 private String city;
+	 @Column(nullable = true)
 	 private int zipcode;
 	
 	//no-args constructor
