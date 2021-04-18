@@ -4,6 +4,10 @@ import com.dsandley.models.User;
 import java.util.List;
 
 public interface IUserService {
-	
-	List<User> findAll();
+
+    /**
+     * returns all users.
+     * @return List<User> - all users
+     */
+    List<User> findAll();
 }
