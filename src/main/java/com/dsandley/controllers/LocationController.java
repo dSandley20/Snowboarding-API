@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.dsandley.models.Location;
+import com.dsandley.models.general.Location;
 import com.dsandley.services.LocationService;
 
 @RestController

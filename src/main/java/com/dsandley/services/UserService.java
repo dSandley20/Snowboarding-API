@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import com.dsandley.models.User;
+import com.dsandley.models.general.User;
 import com.dsandley.repositories.UserRepository;
 import com.dsandley.services.interfaces.IUserService;
 

@@ -2,7 +2,7 @@ package com.dsandley.services.interfaces;
 
 import java.util.List;
 
-import com.dsandley.models.Location;
+import com.dsandley.models.general.Location;
 
 public interface ILocationService {
 

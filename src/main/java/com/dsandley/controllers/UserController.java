@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.dsandley.models.User;
+import com.dsandley.models.general.User;
 import com.dsandley.services.UserService;
 
 @RestController

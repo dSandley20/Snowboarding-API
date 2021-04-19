@@ -1,7 +1,7 @@
 /**
  * holds all the models neccessary for the API
  */
-package com.dsandley.models;
+package com.dsandley.models.general;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

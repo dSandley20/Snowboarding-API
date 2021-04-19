@@ -1,3 +1,6 @@
+/**
+ * our own custom userDeatilsService.
+ */
 package com.dsandley.services;
 
 import org.springframework.security.core.userdetails.UserDetails;

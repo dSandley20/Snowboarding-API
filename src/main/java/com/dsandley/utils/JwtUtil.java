@@ -1,5 +1,5 @@
 /**
- * 
+ * Allows us to be able to format and extract data from the jwt.
  */
 package com.dsandley.utils;
 
@@ -21,11 +21,18 @@ import java.util.function.Function;
 @Service
 public class JwtUtil {
 
+
+    /**
+     * no-args constructor.
+     */
+    public JwtUtil() { }
+
     // TODO to assign this to a env variable
     /**
      * jwt secret.
      */
     private String secretKey = "secret";
+
     //TODO disable magic number in check styles
     /**
      * time modifer that is hard coded then passed in.
