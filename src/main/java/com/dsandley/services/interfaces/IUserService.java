@@ -14,4 +14,9 @@ public interface IUserService {
      * @return List<User> - all users
      */
     List<User> findAll();
+
+    /**
+     * Create
+     */
+    User createUser(User user);
 }
