@@ -6,10 +6,7 @@ package com.dsandley.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.dsandley.models.general.User;
 import com.dsandley.services.UserService;
@@ -28,14 +25,16 @@ public class UserController {
      * @return
      */
     @PostMapping("/user")
-    public String home(){
-        return "Hello World!";
+    private User createUser(@RequestBody User user){
+        service.createUser(user);
+        //return userObj back to user w/ JWT.
+        return  user;
     }
 
     /**
      * Returns a user by ID
      */
-    @GetMapping("/user/:id")
+    @GetMapping("/user/{id}")
     public User getUser(){
         return null;
     }
