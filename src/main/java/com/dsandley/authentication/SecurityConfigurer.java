@@ -9,6 +9,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import com.dsandley.filters.JwtRequestFilter;
@@ -22,8 +23,8 @@ public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
      * @return password
      */
     @Bean
-    public static NoOpPasswordEncoder passwordEncoder() {
-        return (NoOpPasswordEncoder) NoOpPasswordEncoder.getInstance();
+    public static PasswordEncoder passwordEncoder() {
+        return NoOpPasswordEncoder.getInstance();
     }
 
     /**
@@ -64,10 +65,13 @@ public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
      */
     @Override
     protected void configure(final HttpSecurity httpParam) throws Exception {
+        //TODO add createUser endpoint here for new users!
         httpParam.csrf().disable().authorizeRequests()
-                .antMatchers("/authenticate").permitAll().anyRequest()
+                .antMatchers("/authenticate", "/users"). permitAll().anyRequest()
                 .authenticated().and().sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+
+
 
         httpParam.addFilterBefore(jwtRequestFilter,
                 UsernamePasswordAuthenticationFilter.class);

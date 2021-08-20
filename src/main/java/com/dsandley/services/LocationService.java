@@ -25,7 +25,7 @@ public class LocationService implements ILocationService {
     private LocationRepository repository;
 
     /**
-     * builds the query neccessary for the supplied parameters.
+     * builds the query for the supplied parameters.
      */
     @Override
     public List<Location> getLocations(final String name, final String country,

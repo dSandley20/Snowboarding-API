@@ -24,6 +24,7 @@ public class AuthUserDetailsService implements UserDetailsService {
     public UserDetails loadUserByUsername(final String username)
             throws UsernameNotFoundException {
         System.out.println(username);
+        //TODO return our version of user
         return new User("foo", "foo", new ArrayList<>());
     }
 
