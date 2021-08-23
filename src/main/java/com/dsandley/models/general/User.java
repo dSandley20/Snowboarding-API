@@ -3,11 +3,7 @@
  */
 package com.dsandley.models.general;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * @author Daniel Sandley User model that will hold first and last name, email,
@@ -26,21 +22,13 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private final int id;
-    /**
-     * @param firstName
-     *            - firstName of the User obj
-     */
     private String firstName;
-    /**
-     * @param firstName
-     *            - firstName of the User obj
-     */
     private String lastName;
-    /**
-     * @param firstName
-     *            - firstName of the User obj
-     */
     private String email;
+    private String phone;
+    @Column(name = "user_name")
+    private String userName;
+    private String password;
 
     // Constructors for the User class
 
@@ -59,11 +47,15 @@ public class User {
      * @param emailParam
      */
     public User(final int idParam, final String firstNameParam,
-            final String lastNameParam, final String emailParam) {
+            final String lastNameParam, final String emailParam, final String phoneParam, final String userNameParam, final String passwordParam) {
         this.id = idParam;
         this.firstName = firstNameParam;
         this.lastName = lastNameParam;
         this.email = emailParam;
+        this.phone = phoneParam;
+        this.userName = userNameParam;
+        this.password = passwordParam;
+
     }
 
     // Getters and Setters
@@ -85,7 +77,7 @@ public class User {
      * @param firstNameParam
      *            - the new firstName for the specified user obj
      */
-    public void setFirstMame(final String firstNameParam) {
+    public void setFirstName(final String firstNameParam) {
         this.firstName = firstNameParam;
     }
 
@@ -117,6 +109,30 @@ public class User {
      */
     public void setEmail(final String emailParam) {
         this.email = emailParam;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getPassword() {
+        return this.password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
 }
