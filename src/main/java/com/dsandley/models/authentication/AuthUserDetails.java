@@ -16,6 +16,8 @@ public class AuthUserDetails implements UserDetails {
     private String email;
 
     public AuthUserDetails(User user){
+        this.userName = user.getUserName();
+        this.password = user.getPassword();
         this.userId = user.getId();
         this.firstName = user.getFirstName();
         this.lastName = user.getFirstName();
@@ -40,21 +42,21 @@ public class AuthUserDetails implements UserDetails {
 
     @Override
     public boolean isAccountNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isEnabled() {
-        return false;
+        return true;
     }
 }
