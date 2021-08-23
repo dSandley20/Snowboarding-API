@@ -23,14 +23,17 @@ public class AuthUserDetailsService implements UserDetailsService {
     //TODO make it so we can look up username/email and password + hash
     /**
      * loads the user by username and password.
-     * @param username - the username of the account trying to be logged in
+     * @param userName - the username of the account trying to be logged in
      */
     @Override
-    public UserDetails loadUserByUsername(final String username)
+    public UserDetails loadUserByUsername(String userName)
             throws UsernameNotFoundException {
-       Optional<User> user = userRepository.findByUserName(username);
-       user.orElseThrow(() -> new UsernameNotFoundException(("Not Found: " + username)));
-       return user.map(AuthUserDetails::new).get();
+       User user = userRepository.getUserByUsername(userName);
+        if (user == null) {
+            throw new UsernameNotFoundException("Could not find user");
+        }
+
+        return new AuthUserDetails(user);
     }
 
 }
