@@ -1,0 +1,1 @@
+create sequence snowboard_db.hibernate_sequence
