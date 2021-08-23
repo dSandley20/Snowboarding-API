@@ -3,17 +3,22 @@
  */
 package com.dsandley.services;
 
+import com.dsandley.models.authentication.AuthUserDetails;
+import com.dsandley.models.general.User;
+import com.dsandley.repositories.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-
-import org.springframework.security.core.userdetails.User;
+import java.util.Optional;
 
 @Service
 public class AuthUserDetailsService implements UserDetailsService {
+
+    @Autowired
+    UserRepository userRepository;
 
     //TODO make it so we can look up username/email and password + hash
     /**
@@ -23,9 +28,9 @@ public class AuthUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(final String username)
             throws UsernameNotFoundException {
-        System.out.println(username);
-        //TODO return our version of user
-        return new User("foo", "foo", new ArrayList<>());
+       Optional<User> user = userRepository.findByUserName(username);
+       user.orElseThrow(() -> new UsernameNotFoundException(("Not Found: " + username)));
+       return user.map(AuthUserDetails::new).get();
     }
 
 }
