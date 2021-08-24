@@ -68,11 +68,9 @@ public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
     protected void configure(final HttpSecurity httpParam) throws Exception {
         //TODO add createUser endpoint here for new users!
         httpParam.csrf().disable().authorizeRequests()
-                .antMatchers("/authenticate", "/users"). permitAll().anyRequest()
+                .antMatchers("/authenticate", "/user"). permitAll().anyRequest()
                 .authenticated().and().sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-
-
 
         httpParam.addFilterBefore(jwtRequestFilter,
                 UsernamePasswordAuthenticationFilter.class);
