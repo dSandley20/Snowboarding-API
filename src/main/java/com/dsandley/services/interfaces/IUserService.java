@@ -5,6 +5,7 @@ package com.dsandley.services.interfaces;
 
 import java.util.List;
 
+import com.dsandley.dto.general.UserDTO;
 import com.dsandley.models.general.User;
 
 public interface IUserService {
@@ -18,5 +19,5 @@ public interface IUserService {
     /**
      * Create
      */
-    User createUser(User user);
+    User createUser(UserDTO userDTO);
 }
