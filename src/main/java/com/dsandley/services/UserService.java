@@ -2,7 +2,11 @@ package com.dsandley.services;
 
 import java.util.List;
 
+import com.dsandley.dto.general.UserDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +24,14 @@ public class UserService implements IUserService {
     @Autowired
     private UserRepository repository;
 
+    @Bean
+    public PasswordEncoder encoder() {
+        return new BCryptPasswordEncoder();
+    }
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
     /**
      * @return UserList : Array - A list of all the users located in the
      *         database
@@ -29,8 +41,15 @@ public class UserService implements IUserService {
         return (List<User>) repository.findAll();
     }
 
+    //TODO throw email exists eception
     @Override
-    public User createUser(User user) {
+    public User createUser(UserDTO userDTO){
+        User user = new User();
+        user.setFirstName(userDTO.getUserName());
+        user.setLastName(userDTO.getLastName());
+        user.setEmail(userDTO.getEmail());
+        user.setUserName(userDTO.getUserName());
+        user.setPassword(passwordEncoder.encode(userDTO.getPassword()));
         return repository.save(user);
     }
 
