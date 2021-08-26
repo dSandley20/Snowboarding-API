@@ -20,7 +20,6 @@ public class AuthUserDetailsService implements UserDetailsService {
     @Autowired
     UserRepository userRepository;
 
-    //TODO make it so we can look up username/email and password + hash
     /**
      * loads the user by username and password.
      * @param userName - the username of the account trying to be logged in

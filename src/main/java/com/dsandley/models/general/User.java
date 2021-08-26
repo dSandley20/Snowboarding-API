@@ -14,7 +14,6 @@ import javax.persistence.*;
 public class User {
 
     // User Obj fields
-    //todo: add password and password hash fields
 
     /**
      * @param id - id of the User obj

@@ -73,7 +73,6 @@ public class LocationService implements ILocationService {
      */
     @Override
     public List<Location> findAll() {
-        // TODO Auto-generated method stub
         return (List<Location>) repository.findAll();
     }
 

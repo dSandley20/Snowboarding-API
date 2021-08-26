@@ -15,7 +15,6 @@ public class AuthenticationRequest {
      * no args constructor - needed for serialization.
      */
     public AuthenticationRequest() {
-        // TODO Auto-generated constructor stub
     }
 
     /**
