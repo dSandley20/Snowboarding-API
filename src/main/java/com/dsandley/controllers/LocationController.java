@@ -2,10 +2,11 @@ package com.dsandley.controllers;
 
 import java.util.List;
 
+import com.dsandley.dto.general.LocationDTO;
+import com.dsandley.dto.general.UserDTO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import com.dsandley.models.general.Location;
 import com.dsandley.services.LocationService;
@@ -47,4 +48,8 @@ public class LocationController {
         return service.findAll();
     }
 
+    @PostMapping("/location")
+    private Location createLocation(@RequestBody LocationDTO locationDTO){
+       return service.createLocations(locationDTO);
+    }
 }
