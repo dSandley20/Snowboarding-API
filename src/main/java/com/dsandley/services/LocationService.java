@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.criteria.Predicate;
 
+import com.dsandley.dto.general.LocationDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Component;
@@ -74,6 +75,17 @@ public class LocationService implements ILocationService {
     @Override
     public List<Location> findAll() {
         return (List<Location>) repository.findAll();
+    }
+
+    @Override
+    public Location createLocations(LocationDTO locationDTO) {
+        Location location = new Location();
+        location.setName(locationDTO.getName());
+        location.setCountry(locationDTO.getCountry());
+        location.setState(locationDTO.getState());
+        location.setCity(locationDTO.getCity());
+        location.setZipcode(locationDTO.getZipcode());
+        return  repository.save(location);
     }
 
 }

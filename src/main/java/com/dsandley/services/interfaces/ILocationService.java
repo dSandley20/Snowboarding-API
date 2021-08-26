@@ -2,6 +2,7 @@ package com.dsandley.services.interfaces;
 
 import java.util.List;
 
+import com.dsandley.dto.general.LocationDTO;
 import com.dsandley.models.general.Location;
 
 public interface ILocationService {
@@ -22,6 +23,8 @@ public interface ILocationService {
      * @return List<Location> - returns all of the locations
      */
     List<Location> findAll();
+
+    Location createLocations(LocationDTO location);
 
 
 }
