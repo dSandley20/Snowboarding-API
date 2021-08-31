@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.dsandley.models.authentication.AuthenticationRequest;
 import com.dsandley.models.authentication.AuthenticationResponse;
-import com.dsandley.services.AuthUserDetailsService;
+import com.dsandley.services.authentication.AuthUserDetailsService;
 import com.dsandley.utils.JwtUtil;
 
 /**

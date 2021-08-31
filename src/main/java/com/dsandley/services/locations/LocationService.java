@@ -1,4 +1,4 @@
-package com.dsandley.services;
+package com.dsandley.services.locations;
 
 import java.util.List;
 

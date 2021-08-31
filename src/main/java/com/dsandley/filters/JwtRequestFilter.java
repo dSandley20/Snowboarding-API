@@ -1,6 +1,6 @@
 package com.dsandley.filters;
 
-import com.dsandley.services.AuthUserDetailsService;
+import com.dsandley.services.authentication.AuthUserDetailsService;
 import com.dsandley.utils.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

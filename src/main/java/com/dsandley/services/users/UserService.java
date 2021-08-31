@@ -1,4 +1,4 @@
-package com.dsandley.services;
+package com.dsandley.services.users;
 
 import java.util.List;
 

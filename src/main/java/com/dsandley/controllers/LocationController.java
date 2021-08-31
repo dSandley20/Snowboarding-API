@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import com.dsandley.models.general.locations.Location;
-import com.dsandley.services.LocationService;
+import com.dsandley.services.locations.LocationService;
 
 @RestController
 public class LocationController {

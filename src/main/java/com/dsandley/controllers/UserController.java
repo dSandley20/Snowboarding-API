@@ -7,7 +7,7 @@ import java.util.List;
 
 import com.dsandley.dto.general.users.UserDTO;
 import com.dsandley.models.authentication.AuthenticationResponse;
-import com.dsandley.services.AuthUserDetailsService;
+import com.dsandley.services.authentication.AuthUserDetailsService;
 import com.dsandley.utils.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +16,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
 import com.dsandley.models.general.users.User;
-import com.dsandley.services.UserService;
+import com.dsandley.services.users.UserService;
 
 @RestController
 public class UserController {

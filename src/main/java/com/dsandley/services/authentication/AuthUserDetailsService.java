@@ -1,7 +1,7 @@
 /**
  * our own custom userDeatilsService.
  */
-package com.dsandley.services;
+package com.dsandley.services.authentication;
 
 import com.dsandley.models.authentication.AuthUserDetails;
 import com.dsandley.models.general.users.User;
