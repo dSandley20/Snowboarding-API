@@ -2,6 +2,7 @@ package com.dsandley.authentication;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -15,17 +16,9 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import com.dsandley.filters.JwtRequestFilter;
 import com.dsandley.services.authentication.AuthUserDetailsService;
 
-@SuppressWarnings({"deprecation", "unused"})
+@Configuration
 @EnableWebSecurity
 public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
-    /**
-     * encodes the password to not store passwords in plain text.
-     * @return password
-     */
-    @Bean
-    public static PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
 
     /**
      * allows us to instantiate the AutehnticationManager bean.
@@ -48,6 +41,8 @@ public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
     @Autowired
     private AuthUserDetailsService authUserDetailsService;
 
+
+
     /**
      * Points to the new userDetailsService that our application is going to
      * use.
@@ -55,7 +50,7 @@ public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(final AuthenticationManagerBuilder auth)
             throws Exception {
-        auth.userDetailsService(authUserDetailsService);
+        auth.userDetailsService(authUserDetailsService).passwordEncoder(passwordEncoder());
     }
 
     /**
@@ -74,5 +69,15 @@ public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
         httpParam.addFilterBefore(jwtRequestFilter,
                 UsernamePasswordAuthenticationFilter.class);
     }
+
+    /**
+     * encodes the password to not store passwords in plain text.
+     * @return password
+     */
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+
 
 }

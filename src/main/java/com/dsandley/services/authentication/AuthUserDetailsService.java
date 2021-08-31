@@ -6,6 +6,7 @@ package com.dsandley.services.authentication;
 import com.dsandley.models.authentication.AuthUserDetails;
 import com.dsandley.models.general.users.User;
 import com.dsandley.repositories.UserRepository;
+import org.jaxen.expr.Step;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

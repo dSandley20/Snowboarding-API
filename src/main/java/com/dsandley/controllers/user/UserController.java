@@ -50,6 +50,7 @@ public class UserController {
      */
     @PostMapping("/user")
     private ResponseEntity<?> createUser(@RequestBody UserDTO userDTO) throws  Exception{
+        System.out.println(userDTO.getUserName());
         service.createUser(userDTO);
         //return userObj back to user w/ JWT.
         final UserDetails userDetails = userDetailsService
