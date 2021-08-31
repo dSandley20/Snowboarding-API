@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.dsandley.models.general.Location;
+import com.dsandley.models.general.locations.Location;
 
 @Repository
 public interface LocationRepository

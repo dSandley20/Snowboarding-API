@@ -2,13 +2,11 @@ package com.dsandley.controllers;
 
 import java.util.List;
 
-import com.dsandley.dto.general.LocationDTO;
-import com.dsandley.dto.general.UserDTO;
+import com.dsandley.dto.general.locations.LocationDTO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.dsandley.models.general.Location;
+import com.dsandley.models.general.locations.Location;
 import com.dsandley.services.LocationService;
 
 @RestController

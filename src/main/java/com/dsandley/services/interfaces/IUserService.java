@@ -5,8 +5,8 @@ package com.dsandley.services.interfaces;
 
 import java.util.List;
 
-import com.dsandley.dto.general.UserDTO;
-import com.dsandley.models.general.User;
+import com.dsandley.dto.general.users.UserDTO;
+import com.dsandley.models.general.users.User;
 
 public interface IUserService {
 

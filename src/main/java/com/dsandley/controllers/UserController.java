@@ -5,19 +5,17 @@ package com.dsandley.controllers;
 
 import java.util.List;
 
-import com.dsandley.dto.general.UserDTO;
+import com.dsandley.dto.general.users.UserDTO;
 import com.dsandley.models.authentication.AuthenticationResponse;
 import com.dsandley.services.AuthUserDetailsService;
 import com.dsandley.utils.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.BadCredentialsException;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
-import com.dsandley.models.general.User;
+import com.dsandley.models.general.users.User;
 import com.dsandley.services.UserService;
 
 @RestController

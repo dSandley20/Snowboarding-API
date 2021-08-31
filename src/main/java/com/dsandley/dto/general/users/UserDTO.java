@@ -1,4 +1,4 @@
-package com.dsandley.dto.general;
+package com.dsandley.dto.general.users;
 
 public class UserDTO {
 

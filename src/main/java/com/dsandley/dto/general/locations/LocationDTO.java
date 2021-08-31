@@ -1,6 +1,4 @@
-package com.dsandley.dto.general;
-
-import com.dsandley.models.general.Location;
+package com.dsandley.dto.general.locations;
 
 public class LocationDTO {
       private String name;

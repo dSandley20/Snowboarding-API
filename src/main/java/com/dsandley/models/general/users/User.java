@@ -1,7 +1,7 @@
 /**
  * holds all the models neccessary for the API
  */
-package com.dsandley.models.general;
+package com.dsandley.models.general.users;
 
 import javax.persistence.*;
 

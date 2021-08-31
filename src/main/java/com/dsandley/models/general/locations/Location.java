@@ -1,4 +1,4 @@
-package com.dsandley.models.general;
+package com.dsandley.models.general.locations;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

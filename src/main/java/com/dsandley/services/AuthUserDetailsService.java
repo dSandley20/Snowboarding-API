@@ -4,7 +4,7 @@
 package com.dsandley.services;
 
 import com.dsandley.models.authentication.AuthUserDetails;
-import com.dsandley.models.general.User;
+import com.dsandley.models.general.users.User;
 import com.dsandley.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;

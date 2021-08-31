@@ -2,8 +2,8 @@ package com.dsandley.services.interfaces;
 
 import java.util.List;
 
-import com.dsandley.dto.general.LocationDTO;
-import com.dsandley.models.general.Location;
+import com.dsandley.dto.general.locations.LocationDTO;
+import com.dsandley.models.general.locations.Location;
 
 public interface ILocationService {
 

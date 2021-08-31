@@ -1,6 +1,6 @@
 package com.dsandley.models.authentication;
 
-import com.dsandley.models.general.User;
+import com.dsandley.models.general.users.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 

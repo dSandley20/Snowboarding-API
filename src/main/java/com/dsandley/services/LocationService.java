@@ -4,14 +4,14 @@ import java.util.List;
 
 import javax.persistence.criteria.Predicate;
 
-import com.dsandley.dto.general.LocationDTO;
+import com.dsandley.dto.general.locations.LocationDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
-import com.dsandley.models.general.Location;
+import com.dsandley.models.general.locations.Location;
 import com.dsandley.repositories.LocationRepository;
 import com.dsandley.services.interfaces.ILocationService;
 
