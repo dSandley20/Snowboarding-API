@@ -1,4 +1,4 @@
-package com.dsandley.services.interfaces;
+package com.dsandley.services.interfaces.locations;
 
 import java.util.List;
 

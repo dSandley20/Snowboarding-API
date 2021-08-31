@@ -13,7 +13,7 @@ import org.springframework.util.StringUtils;
 
 import com.dsandley.models.general.locations.Location;
 import com.dsandley.repositories.LocationRepository;
-import com.dsandley.services.interfaces.ILocationService;
+import com.dsandley.services.interfaces.locations.ILocationService;
 
 @Service
 @Component

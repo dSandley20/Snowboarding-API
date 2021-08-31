@@ -1,7 +1,7 @@
 /**
  * outlines what kind of queries we want.
  */
-package com.dsandley.services.interfaces;
+package com.dsandley.services.interfaces.users;
 
 import java.util.List;
 
