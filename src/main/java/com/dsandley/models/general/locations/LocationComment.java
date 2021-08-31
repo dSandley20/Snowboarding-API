@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "location_comments")
-public class LocationComments {
+public class LocationComment {
    @Id
    @Column(name = "id")
     private int id;
@@ -15,7 +15,7 @@ public class LocationComments {
     private int locationId;
     private  String content;
 
-    LocationComments(int id, int locationId, String content){
+    LocationComment(int id, int locationId, String content){
         this.id = id;
         this.locationId = locationId;
         this.content = content;
