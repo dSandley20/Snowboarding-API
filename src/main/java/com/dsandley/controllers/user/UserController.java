@@ -1,7 +1,7 @@
 /**
  * handles the users endpoints
  */
-package com.dsandley.controllers;
+package com.dsandley.controllers.user;
 
 import java.util.List;
 

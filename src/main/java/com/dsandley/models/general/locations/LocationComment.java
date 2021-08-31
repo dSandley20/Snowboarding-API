@@ -15,7 +15,10 @@ public class LocationComment {
     private int locationId;
     private  String content;
 
-    LocationComment(int id, int locationId, String content){
+    public LocationComment() {
+    }
+
+    public LocationComment(int id, int locationId, String content){
         this.id = id;
         this.locationId = locationId;
         this.content = content;

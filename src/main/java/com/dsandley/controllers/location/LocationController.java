@@ -1,4 +1,4 @@
-package com.dsandley.controllers;
+package com.dsandley.controllers.location;
 
 import java.util.List;
 
