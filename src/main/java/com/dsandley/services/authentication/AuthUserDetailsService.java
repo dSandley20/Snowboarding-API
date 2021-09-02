@@ -26,7 +26,7 @@ public class AuthUserDetailsService implements UserDetailsService {
      * @param userName - the username of the account trying to be logged in
      */
     @Override
-    public UserDetails loadUserByUsername(String userName)
+    public AuthUserDetails loadUserByUsername(String userName)
             throws UsernameNotFoundException {
         Optional<User> user = userRepository.findByUserName(userName);
 

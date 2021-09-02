@@ -6,7 +6,9 @@ package com.dsandley.controllers.user;
 import java.util.List;
 
 import com.dsandley.dto.general.users.UserDTO;
+import com.dsandley.models.authentication.AuthUserDetails;
 import com.dsandley.models.authentication.AuthenticationResponse;
+import com.dsandley.models.general.users.AuthUser;
 import com.dsandley.services.authentication.AuthUserDetailsService;
 import com.dsandley.utils.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,10 +55,12 @@ public class UserController {
         System.out.println(userDTO.getUserName());
         service.createUser(userDTO);
         //return userObj back to user w/ JWT.
-        final UserDetails userDetails = userDetailsService
+        final AuthUserDetails userDetails = userDetailsService
                 .loadUserByUsername(userDTO.getUserName());
         final String jwt = jwtTokenUtil.generateToken(userDetails);
-        return ResponseEntity.ok(new AuthenticationResponse(jwt));
+        AuthUser user = new AuthUser(userDetails.getUserId(), userDetails.getFirstName(), userDetails.getLastName(), userDetails.getEmail(), userDetails.getUsername());
+
+        return ResponseEntity.ok(new AuthenticationResponse(jwt, user));
     }
 
     /**

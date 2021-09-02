@@ -30,6 +30,26 @@ public class AuthUserDetails implements UserDetails {
         return null;
     }
 
+    public String getUserName() {
+        return userName;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
     @Override
     public String getPassword() {
         return password;

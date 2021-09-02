@@ -1,8 +1,10 @@
 /**
- *Handles the loggin in of a user.
+ * Handles the loggin in of a user.
  */
 package com.dsandley.controllers.authentication;
 
+import com.dsandley.models.authentication.AuthUserDetails;
+import com.dsandley.models.general.users.AuthUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -54,8 +56,6 @@ public class AuthenticationController {
             @RequestBody final AuthenticationRequest authenticationRequest)
             throws Exception {
         try {
-            System.out.println(authenticationRequest.getUsername());
-            System.out.println(authenticationRequest.getPassword());
             authManager.authenticate(new UsernamePasswordAuthenticationToken(
                     authenticationRequest.getUsername(),
                     authenticationRequest.getPassword()));
@@ -64,11 +64,13 @@ public class AuthenticationController {
         }
 
 
-        final UserDetails userDetails = userDetailsService
+        final AuthUserDetails userDetails = userDetailsService
                 .loadUserByUsername(authenticationRequest.getUsername());
 
         final String jwt = jwtTokenUtil.generateToken(userDetails);
 
-        return ResponseEntity.ok(new AuthenticationResponse(jwt));
+        AuthUser user = new AuthUser(userDetails.getUserId(), userDetails.getFirstName(), userDetails.getLastName(), userDetails.getEmail(), userDetails.getUsername());
+
+        return ResponseEntity.ok(new AuthenticationResponse(jwt, user));
     }
 }
