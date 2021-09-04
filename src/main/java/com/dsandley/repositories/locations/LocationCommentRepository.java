@@ -1,4 +1,4 @@
-package com.dsandley.repositories;
+package com.dsandley.repositories.locations;
 
 import com.dsandley.models.general.locations.LocationComment;
 import org.springframework.data.jpa.repository.JpaRepository;

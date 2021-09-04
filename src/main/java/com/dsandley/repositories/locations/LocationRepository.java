@@ -1,7 +1,7 @@
 /**
  * contains all the repos and their interfaces.
  */
-package com.dsandley.repositories;
+package com.dsandley.repositories.locations;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;

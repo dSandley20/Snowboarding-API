@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.dsandley.models.general.users.User;
-import com.dsandley.repositories.UserRepository;
+import com.dsandley.repositories.users.UserRepository;
 import com.dsandley.services.interfaces.users.IUserService;
 
 @Service
