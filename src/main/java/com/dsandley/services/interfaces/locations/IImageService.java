@@ -5,7 +5,7 @@ import com.dsandley.models.general.images.Image;
 
 public interface IImageService {
 
-//    public Image getImageById(int id);
+    public Image getImageById(int id);
 
     public Image createImage(ImageDTO image);
 

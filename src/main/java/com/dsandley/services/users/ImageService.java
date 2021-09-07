@@ -16,10 +16,11 @@ public class ImageService implements IImageService {
     private ImageRepository repository;
 
 
-//    @Override
-//    public Image getImageById(int Id) {
-//        return  repository.getImageById(Id);
-//    }
+    @Override
+    public Image getImageById(int Id) {
+        System.out.println(repository.getImageById(Id).getId());
+        return  repository.getImageById(Id);
+    }
 
     @Override
     public Image createImage(ImageDTO image) {

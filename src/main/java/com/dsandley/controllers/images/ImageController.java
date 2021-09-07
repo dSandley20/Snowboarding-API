@@ -3,14 +3,14 @@ package com.dsandley.controllers.images;
 import com.dsandley.dto.general.images.ImageDTO;
 import com.dsandley.models.general.images.Image;
 import com.dsandley.services.users.ImageService;
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
 import org.eclipse.jgit.util.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
+import java.io.*;
 import java.sql.Timestamp;
 
 @RestController
@@ -20,10 +20,13 @@ public class ImageController {
     private ImageService service;
 
     // TODO convert image
-//    @GetMapping("/images/{id}")
-//    public  Image getImage(@RequestParam int id){
-//        return  service.getImageById(id);
-//    }
+    @GetMapping(value = "/images/{id}", produces ={MediaType.IMAGE_JPEG_VALUE, MediaType.IMAGE_PNG_VALUE, MediaType.IMAGE_GIF_VALUE})
+    public @ResponseBody byte[] getImage(@PathVariable int id) throws IOException {
+        Image image =  service.getImageById(id);
+        //IOUtils coudn't find the files so we are using Java's file system
+        File tempFile = new File(image.getLocation());
+        return FileUtils.readFileToByteArray(tempFile);
+    }
 
     //TODO maybe revamp the DTO saving object -> include id of location + add timestamp
     @PostMapping("/images")
