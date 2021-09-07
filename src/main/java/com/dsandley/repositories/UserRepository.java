@@ -1,7 +1,7 @@
 /**
  * contains all the repos.
  */
-package com.dsandley.repositories.users;
+package com.dsandley.repositories;
 
 
 

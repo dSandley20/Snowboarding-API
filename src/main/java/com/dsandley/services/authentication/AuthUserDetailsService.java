@@ -5,7 +5,7 @@ package com.dsandley.services.authentication;
 
 import com.dsandley.models.authentication.AuthUserDetails;
 import com.dsandley.models.general.users.User;
-import com.dsandley.repositories.users.UserRepository;
+import com.dsandley.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

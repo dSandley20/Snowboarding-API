@@ -8,7 +8,7 @@ public class Image {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private  int Id;
+    private  int id;
     private String location;
     private int locationId;
 
@@ -17,17 +17,17 @@ public class Image {
     }
 
     public Image(int id, String location, int locationId) {
-        this.Id = id;
+        this.id = id;
         this.location = location;
         this.locationId = locationId;
     }
 
     public int getId() {
-        return Id;
+        return id;
     }
 
     public void setId(int id) {
-        Id = id;
+        id = id;
     }
 
     public String getLocation() {

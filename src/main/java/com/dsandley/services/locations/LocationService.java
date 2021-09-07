@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import com.dsandley.models.general.locations.Location;
-import com.dsandley.repositories.locations.LocationRepository;
+import com.dsandley.repositories.LocationRepository;
 import com.dsandley.services.interfaces.locations.ILocationService;
 
 @Service
