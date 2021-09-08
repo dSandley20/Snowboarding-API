@@ -31,15 +31,20 @@ public class ImageController {
     //TODO maybe revamp the DTO saving object -> include id of location + add timestamp
     @PostMapping("/images")
     public Image saveImage(@RequestBody ImageDTO image) {
+        saveImageData(image);
+        return service.createImage(image);
+    }
 
+    public void saveImageData (ImageDTO image) {
         //postitions 0 + 1 = fileType
         //postition 2 = fileData
         int [] postionArray = { image.getFileData().indexOf("/") + 1 , image.getFileData().indexOf(";") ,  image.getFileData().indexOf(",") + 1};
         //skips over the file type
-        String imageData = image.getFileData().substring(postionArray[2]);
-        String fileType = image.getFileData().substring(postionArray[0], postionArray[1]);
-        String timestamp = new Timestamp(System.currentTimeMillis()).toString();
-        String imageLocation = "locationImage-" + timestamp + "." + fileType;
+        final String imageData = image.getFileData().substring(postionArray[2]);
+        final String fileType = image.getFileData().substring(postionArray[0], postionArray[1]);
+        final String timestamp = new Timestamp(System.currentTimeMillis()).toString();
+        final String imageDir  = "/Users/danielsandley/workspace/personal-projects/Snowboarding-API/src/main/resources/Images/";
+        final String imageLocation = imageDir + "locationImage-" + timestamp + "." + fileType;
         byte[] decodedImageData = Base64.decode(imageData);
         //locationImage + locationId + timestamp + fileType
         try (OutputStream stream = new FileOutputStream(imageLocation)) {
@@ -50,7 +55,5 @@ public class ImageController {
         } catch (IOException e) {
             System.out.println("IOException");
         }
-        //TODO create new response entity
-        return service.createImage(image);
     }
 }
