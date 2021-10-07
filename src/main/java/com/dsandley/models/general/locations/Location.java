@@ -1,11 +1,9 @@
 package com.dsandley.models.general.locations;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import com.dsandley.models.general.images.Image;
+
+import javax.persistence.*;
+import java.util.List;
 
 /**
  * @author Daniel. holds data such as id, name, country, state, city, and
@@ -22,35 +20,15 @@ public class Location {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    /**
-     * name field.
-     */
+
     private String name;
-
-    /**
-     * country field.
-     */
     private String country;
-
-    /**
-     * state field.
-     */
     private String state;
-
-    /**
-     * city field.
-     */
     private String city;
-
-    /**
-     * zipcode field.
-     */
     @Column(nullable = true)
     private String zipcode;
+   
 
-    /**
-     * no-args constructor.
-     */
     public Location() {
     }
 

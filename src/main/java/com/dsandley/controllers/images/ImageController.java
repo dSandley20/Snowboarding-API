@@ -19,7 +19,6 @@ public class ImageController {
     @Autowired
     private ImageService service;
 
-    // TODO convert image
     @GetMapping(value = "/images/{id}", produces ={MediaType.IMAGE_JPEG_VALUE, MediaType.IMAGE_PNG_VALUE, MediaType.IMAGE_GIF_VALUE})
     public @ResponseBody byte[] getImage(@PathVariable int id) throws IOException {
         Image image =  service.getImageById(id);

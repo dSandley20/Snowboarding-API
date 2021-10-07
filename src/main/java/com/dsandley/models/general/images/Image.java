@@ -1,5 +1,7 @@
 package com.dsandley.models.general.images;
 
+import com.dsandley.models.general.locations.Location;
+
 import javax.persistence.*;
 
 @Entity
