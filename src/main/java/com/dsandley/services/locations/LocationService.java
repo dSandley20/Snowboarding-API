@@ -62,8 +62,8 @@ public class LocationService implements ILocationService {
                     }
                     // end of adding parameters to query
                     // sort the query
-                    cq.orderBy(cb.desc(root.get("name")),
-                            cb.asc(root.get("id")));
+                    cq.orderBy(cb.asc(root.get("name")),
+                            cb.desc(root.get("id")));
                     return p;
                 });
         return   locations;

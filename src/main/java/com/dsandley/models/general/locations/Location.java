@@ -27,7 +27,7 @@ public class Location {
     private String city;
     @Column(nullable = true)
     private String zipcode;
-   
+
 
     public Location() {
     }
