@@ -40,7 +40,6 @@ public class LocationService implements ILocationService {
                     // add parameters to the query
                     // NOTE: can't use isEmpty anymore - deprecated as of 5.3
                     if (StringUtils.hasText(name)) {
-                        System.out.println(!StringUtils.hasText(name));
                         String nameString = "%" + name + "%";
                         p = cb.and(p, cb.like(root.get("name"), nameString));
                     }

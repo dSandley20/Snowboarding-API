@@ -28,7 +28,6 @@ public class Location {
     @Column(nullable = true)
     private String zipcode;
 
-
     public Location() {
     }
 

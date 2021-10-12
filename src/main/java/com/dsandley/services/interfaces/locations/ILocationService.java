@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.dsandley.dto.general.locations.LocationDTO;
 import com.dsandley.models.general.locations.Location;
+import org.springframework.data.jpa.repository.Query;
 
 public interface ILocationService {
 

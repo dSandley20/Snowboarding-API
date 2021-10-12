@@ -41,8 +41,6 @@ public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
     @Autowired
     private AuthUserDetailsService authUserDetailsService;
 
-
-
     /**
      * Points to the new userDetailsService that our application is going to
      * use.
