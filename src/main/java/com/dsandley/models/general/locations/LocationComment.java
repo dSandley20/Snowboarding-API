@@ -1,15 +1,12 @@
 package com.dsandley.models.general.locations;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "location_comments")
 public class LocationComment {
    @Id
-   @Column(name = "id")
+   @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
    @Column(name = "location_id")
     private int locationId;
