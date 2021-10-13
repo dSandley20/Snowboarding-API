@@ -1,9 +1,13 @@
 package com.dsandley.models.general.locations;
 
 import com.dsandley.models.general.images.Image;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import net.minidev.json.annotate.JsonIgnore;
 
 import javax.persistence.*;
-import java.util.List;
+import java.io.Serializable;
+import java.util.Objects;
+import java.util.Set;
 
 /**
  * @author Daniel. holds data such as id, name, country, state, city, and
@@ -11,7 +15,7 @@ import java.util.List;
  */
 @Entity
 @Table(name = "locations")
-public class Location {
+public class Location implements Serializable {
 
     /**
      * id field that is serialized / auto generated.
@@ -19,14 +23,15 @@ public class Location {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-
-
     private String name;
     private String country;
     private String state;
     private String city;
     @Column(nullable = true)
     private String zipcode;
+    @OneToMany(mappedBy = "locationObj",fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JsonManagedReference
+    private Set<Image> images;
 
     public Location() {
     }
@@ -138,6 +143,39 @@ public class Location {
      */
     public void setZipcode(final String zipcodeParam) {
         this.zipcode = zipcodeParam;
+    }
+
+    @JsonIgnore
+    public Set<Image> getImages() {
+        return images;
+    }
+
+    public void setImages(Set<Image> images) {
+        this.images = images;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Location location = (Location) o;
+        return id == location.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+    @Override
+    public String toString() {
+        return "Location{" +
+                "id=" + id +
+                ", country='" + country + '\'' +
+                ", state='" + state + '\'' +
+                ", city='" + city + '\'' +
+                ", zipcode='" + zipcode + '\'' +
+                '}';
     }
 
 }

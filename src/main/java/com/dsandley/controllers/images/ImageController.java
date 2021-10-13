@@ -2,6 +2,7 @@ package com.dsandley.controllers.images;
 
 import com.dsandley.dto.general.images.ImageDTO;
 import com.dsandley.models.general.images.Image;
+import com.dsandley.models.general.locations.Location;
 import com.dsandley.services.users.ImageService;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
