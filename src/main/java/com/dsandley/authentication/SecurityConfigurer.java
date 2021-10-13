@@ -60,7 +60,7 @@ public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
     protected void configure(final HttpSecurity httpParam) throws Exception {
         //TODO add createUser endpoint here for new users!
         httpParam.csrf().disable().authorizeRequests()
-                .antMatchers("/authenticate", "/user", "/locations"). permitAll().anyRequest()
+                .antMatchers("/authenticate", "/user", "/locations", "/images/{id}"). permitAll().anyRequest()
                 .authenticated().and().sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
