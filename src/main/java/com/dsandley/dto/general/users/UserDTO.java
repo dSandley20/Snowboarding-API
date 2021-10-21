@@ -1,5 +1,7 @@
 package com.dsandley.dto.general.users;
 
+import com.dsandley.models.general.enums.Role;
+
 public class UserDTO {
 
     private String firstName;
@@ -7,13 +9,22 @@ public class UserDTO {
     private String email;
     private String userName;
     private String password;
+    private Role role;
 
-    public UserDTO(String firstName, String lastName, String email, String userName, String password) {
+    public UserDTO(String firstName, String lastName, String email, String userName, String password, String role) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.userName = userName;
         this.password = password;
+        //check string to set role
+        if(role.equals("user")){
+            this.role = Role.USER;
+        }else if (role.equals("admin")){
+            this.role = Role.ADMIN;
+        }else{
+            this.role = Role.SUPER;
+        }
     }
 
     public void setFirstName(String firstName) {
@@ -54,5 +65,19 @@ public class UserDTO {
 
     public String getPassword() {
         return password;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        if(role.equals("user")){
+            this.role = Role.USER;
+        }else if (role.equals("admin")){
+            this.role = Role.ADMIN;
+        }else{
+            this.role = Role.SUPER;
+        }
     }
 }
