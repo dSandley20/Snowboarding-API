@@ -1,5 +1,5 @@
 package com.dsandley.models.general.enums;
 
-public enum Roles {
+public enum Role {
     USER, ADMIN, SUPER
 }
