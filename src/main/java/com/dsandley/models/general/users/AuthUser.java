@@ -16,12 +16,13 @@ public class AuthUser {
     @Enumerated(EnumType.STRING)
     private Role role;
 
-    public AuthUser(int id, String firstName, String lastName, String email, String userName) {
+    public AuthUser(int id, String firstName, String lastName, String email, String userName, Role role) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.userName = userName;
+        this.role = role;
     }
 
     public int getId() {
@@ -70,5 +71,13 @@ public class AuthUser {
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 }
