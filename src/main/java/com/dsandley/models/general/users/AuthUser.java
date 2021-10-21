@@ -1,6 +1,9 @@
 package com.dsandley.models.general.users;
 
-import javax.persistence.Column;
+import com.dsandley.models.general.enums.Role;
+
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 
 public class AuthUser {
 
@@ -10,6 +13,8 @@ public class AuthUser {
     private String email;
     private String phone;
     private String userName;
+    @Enumerated(EnumType.STRING)
+    private Role role;
 
     public AuthUser(int id, String firstName, String lastName, String email, String userName) {
         this.id = id;
